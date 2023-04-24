@@ -1,6 +1,6 @@
 #!/bin/sh
 #insmod 8188eu.ko
-device=`ifconfig|grep "wl"|awk -F: '{ print $1 }'`
+device=`iwconfig|grep "wl"|awk -F: '{ print $1 }'`
 ifconfig $device up
 iwconfig
 killall wpa_supplicant
